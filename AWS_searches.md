@@ -25,7 +25,7 @@ index="<indexname>"  eventName=GetObject  "requestParameters.bucketName"="<s3buc
 ## Is there key generation?
 
 ```
-index="nub_cloudtrail"  eventName=CreateKeyPair "userIdentity.userName"="<insert IAM user if you want to narrow down>"
+index="<indexname>"  eventName=CreateKeyPair "userIdentity.userName"="<insert IAM user if you want to narrow down>"
 | table eventTime eventSource awsRegion eventName requestParameters.keyFormat requestParameters.keyName  userIdentity.userName userIdentity.type
  sourceIPAddress userAgent responseElements.keyPairId
 
@@ -36,7 +36,7 @@ index="nub_cloudtrail"  eventName=CreateKeyPair "userIdentity.userName"="<insert
 ## How many EC2 instances have been launched? (Per IAM user)
 
 ```
-index="nub_cloudtrail" eventName=RunInstances 
+index="<indexname>" eventName=RunInstances 
 | search NOT errorCode="*Invalid*" NOT eventName=*describe*
 | stats count by userIdentity.userName, requestParameters.instancesSet.items{}.minCount
 | eval total_ec2s='requestParameters.instancesSet.items{}.minCount' * count
@@ -47,7 +47,7 @@ index="nub_cloudtrail" eventName=RunInstances
 ## Information about created EC2 instances:
 
 ```
-index="nub_cloudtrail" eventName=RunInstances 
+index="<indexname>" eventName=RunInstances 
 | rename eventTime as time 
 | rename userIdentity.userName as username 
 | rename userIdentity.type as usertype
@@ -66,7 +66,7 @@ index="nub_cloudtrail" eventName=RunInstances
 ## Terminated EC2 instances:
 
 ```
-index="nub_cloudtrail" eventName=*TerminateInstances* 
+index="<indexname>" eventName=*TerminateInstances* 
 | table eventTime eventSource awsRegion eventName  userIdentity.type
  sourceIPAddress requestParameters.instancesSet.items{}.instanceId
 
@@ -75,7 +75,7 @@ index="nub_cloudtrail" eventName=*TerminateInstances*
 ## Who's been making policy changes?
 
 ```
-index="nub-2-cloudtrail" eventName="*policy*" "userIdentity.arn"="arn:aws:iam::949622803460:user/dev-policy-specialist"
+index="<indexname>" eventName="*policy*" "userIdentity.arn"="<specify an arn here to narrow if you want>"
 | rename eventTime as time 
 | rename awsRegion as region
 | rename requestParameters.policyArn as  policyarn 
