@@ -3,6 +3,8 @@
 
 [Key Generation](#is-there-key-generation)
 
+[Ec2 Instances launched?](#how-many-ec2-instances-have-been-launched-periam-user)
+
 
 ## Who is getting objects from S3 buckets (successfully):
 ```
