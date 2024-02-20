@@ -1,7 +1,7 @@
 # Splunk searches
 [Who is getting objects from S3 buckets](#who-is-getting-objects-from-s3-buckets-successfully)
 
-[policy changes](#who's-been-making-policy-changes)
+[Key Generation](#is-there-key-generation)
 
 
 ## Who is getting objects from S3 buckets (successfully):
@@ -18,8 +18,7 @@ index="<indexname>"  eventName=GetObject  "requestParameters.bucketName"="<s3buc
 | sort 0 +eventTime
 ```
 
-## Is there key generation
-#num2
+## Is there key generation?
 
 ```
 index="nub_cloudtrail"  eventName=CreateKeyPair "userIdentity.userName"="<insert IAM user if you want to narrow down>"
@@ -60,7 +59,7 @@ index="nub_cloudtrail" eventName=RunInstances
 | sort 0 +eventTime
 ```
 
-## Terminated EC2 instances:
+# Terminated EC2 instances:
 
 ```
 index="nub_cloudtrail" eventName=*TerminateInstances* 
@@ -83,3 +82,6 @@ index="nub-2-cloudtrail" eventName="*policy*" "userIdentity.arn"="arn:aws:iam::9
 | table time region readOnly policyarn polName polDoc username src_ip
 | sort 0 +time
 ```
+
+
+# title number {#some-heading}
