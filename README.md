@@ -38,7 +38,7 @@ Cloudtrail/
 ![image](https://github.com/Broomey28/aws_cloudtrail_analysis/assets/56151530/f1e594c3-803d-47bc-81e9-054ee282d78d)
 
 # Ready for analysis, fast.
-Check out some of the [pre-made searches](AWS-searches.md) for various use cases as your starting point and you're good to go.
+Check out some of the [pre-made searches](AWS_searches.md) for various use cases as your starting point and you're good to go.
 
 
 
