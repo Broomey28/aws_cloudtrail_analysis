@@ -3,7 +3,9 @@
 
 [Key Generation](#is-there-key-generation)
 
-[Ec2 Instances launched?](#how-many-ec2-instances-have-been-launched-per-iam-user)
+[EC2 Instances launched/deleted?](#how-many-ec2-instances-have-been-launched-per-iam-user)
+
+[Policy changes?](whos-been-making-policy-changes)
 
 
 ## Who is getting objects from S3 buckets (successfully):
@@ -61,7 +63,7 @@ index="nub_cloudtrail" eventName=RunInstances
 | sort 0 +eventTime
 ```
 
-# Terminated EC2 instances:
+## Terminated EC2 instances:
 
 ```
 index="nub_cloudtrail" eventName=*TerminateInstances* 
@@ -84,6 +86,3 @@ index="nub-2-cloudtrail" eventName="*policy*" "userIdentity.arn"="arn:aws:iam::9
 | table time region readOnly policyarn polName polDoc username src_ip
 | sort 0 +time
 ```
-
-
-# title number {#some-heading}
