@@ -17,4 +17,4 @@ Cloudtrail/
 
 ### Let's get this information overload under control and ready for analysis, fast and free:
 
-Firstly, let's move all of the files out of the sub dirs and into one dir by using 
+Firstly, let's copy all of the files out of the sub dirs and into one dir by using the 
