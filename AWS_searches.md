@@ -5,7 +5,7 @@
 
 [EC2 Instances launched/deleted?](#how-many-ec2-instances-have-been-launched-per-iam-user)
 
-[Policy changes?](whos-been-making-policy-changes)
+[Policy changes?](#whos-been-making-policy-changes)
 
 
 ## Who is getting objects from S3 buckets (successfully):
