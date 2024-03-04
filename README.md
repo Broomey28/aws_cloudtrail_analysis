@@ -17,7 +17,7 @@ Cloudtrail/
 
 ### Let's get this information overload under control and ready for analysis, fast and free:
 
-1. Iterate through all of the json files and pull out the 'Records' key, then save into one singular json file with my [get_json_files_and_merge.py](get_json_files_and_merge.py) file.
+1. Iterate through all of the json files and pull out the 'Records' key, then save into one singular json file with my [get_json_files_and_merge.py](get_json_files_and_merge.py) script.
 
 4. Get them into your SIEM of choice, I'm using splunk - because it takes me 10 seconds:
 #### Add data
