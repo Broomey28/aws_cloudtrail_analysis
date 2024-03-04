@@ -1,4 +1,4 @@
-# AWS Compromise playbook - Cloudtrail focused
+# AWS Compromise - Cloudtrail focused
 You're on an active incident, the threat actor is seen with access to your AWS environment and the devsecops folks have given you what seems like 50,000 log files inside 20000 folders - what are your next steps?
 
 When cloudtrail is dumped from an S3 bucket storage and given to you, sometimes it's like this:
@@ -17,7 +17,7 @@ Cloudtrail/
 
 ### Let's get this information overload under control and ready for analysis, fast and free:
 
-1. Iterate through all of the json files and pull out the 'Records' key, then save into one singular json file with my [get_json_files_and_merge.py](get_json_files_and_merge.py) file.
+1. Iterate through all of the json files and pull out the 'Records' key, then save into one singular json file with my [get_json_files_and_merge.py](get_json_files_and_merge.py) script.
 
 4. Get them into your SIEM of choice, I'm using splunk - because it takes me 10 seconds:
 #### Add data
