@@ -27,7 +27,8 @@ def merge_logs(source_dir):
         except AttributeError:
             print(f"Skipping item without 'records' key")
     with open('merged_cloudtrail_logs.json', 'w') as savefile:
-        json.dump(extracted, savefile, indent=2)      
+        json.dump(extracted, savefile, indent=2)    
+    print(f"\n{BOLD}Finished!{NOCOLOUR} \nYour singular log file has been made here: \n{GREEN}{os.getcwd()}\\merged_cloudtrail_logs.json{NOCOLOUR}")
         
 source_directory = input("Enter the source path where your cloudtrial logs are: ")
 list_of_json = merge_logs(source_directory)
