@@ -17,10 +17,7 @@ Cloudtrail/
 
 ### Let's get this information overload under control and ready for analysis, fast and free:
 
-1. Copy .json files out of the sub dirs and into one dir by using the [copy_into_dir.py](copy_into_dir.py) file.
-2. Merge them into one file, unflatten them with:
-
-```cat ./* | jq '.Records[]' >> all_files.json```
+1. Iterate through all of the json files and pull out the 'Records' key, then save into one singular json file with my [get_json_files_and_merge.py](get_json_files_and_merge.py) file.
 
 4. Get them into your SIEM of choice, I'm using splunk - because it takes me 10 seconds:
 #### Add data
